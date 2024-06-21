@@ -14,4 +14,7 @@ import java.util.UUID;
 public interface OrderRepository extends JpaRepository<OrderModel, UUID> {
     @Query("SELECT o FROM OrderModel o WHERE o.idClient = :idClient AND o.status <> 'FECHADO'")
     List<OrderModel> getOrderByIdClient(@Param("idClient") UUID idClient);
+
+    @Query("SELECT o FROM OrderModel o WHERE o.status <> 'FECHADO'")
+    List<OrderModel> getAllOrdersForWeb();
 }

@@ -27,7 +27,7 @@ public class OrderModel {
 
     private double totalPrice;
 
-    @Column(columnDefinition = "ENUM('PENDENTE', 'EM_PREPARO', 'PRONTO', 'ENTREGUE')")
+    @Column(columnDefinition = "ENUM('PENDENTE', 'EM_PREPARO', 'PRONTO', 'ENTREGUE', 'FECHADO')")
     @Enumerated(EnumType.STRING)
     private Status status;
 

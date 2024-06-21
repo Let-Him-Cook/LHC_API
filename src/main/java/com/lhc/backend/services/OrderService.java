@@ -36,7 +36,7 @@ public class OrderService {
     }
 
     public List<OrderDishResponseDTO> getAllOrdersWeb() {
-        var orders = orderRepository.findAll();
+        var orders = orderRepository.getAllOrdersForWeb();
 
         return orders.stream().map(order -> {
             var orderDishesList = orderDishesRepository.findAllByIdOrder(order.getId());
