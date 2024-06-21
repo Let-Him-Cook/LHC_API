@@ -27,11 +27,7 @@ public class OrderController {
     @GetMapping("/web")
     public ResponseEntity<List<OrderDishResponseDTO>> getOpenOrdersWeb() {
         List<OrderDishResponseDTO> orders = orderService.getAllOrdersWeb();
-        if (orders.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        } else {
-            return ResponseEntity.ok(orders);
-        }
+        return ResponseEntity.ok(orders);
     }
 
     @GetMapping("/{idClient}")
